@@ -94,3 +94,71 @@ for(int var9 = 0; var9 < var8; ++var9) {
     System.out.print(n + " ");
 }
 
+
+# Parte 2: Ejercicio Algorítmico
+
+## Algoritmo en Pseudocódigo
+
+    ALGORITMO EncontrarSegundosExtremos
+    ENTRADA: Arreglo de enteros "arr"
+    SALIDA: Imprimir segundoMayor y segundoMenor
+
+    VARIABLES:
+        mayor1 <- -Infinito
+        mayor2 <- -Infinito
+        menor1 <- +Infinito
+        menor2 <- +Infinito
+        numero <- 0
+
+    INICIO
+        PARA CADA numero EN arr HACER:
+
+            SI numero > mayor1 ENTONCES:
+                mayor2 <- mayor1
+                mayor1 <- numero
+            SINO SI numero > mayor2 Y numero != mayor1 ENTONCES:
+                mayor2 <- numero
+            FIN SI
+
+            SI numero < menor1 ENTONCES:
+                menor2 <- menor1
+                menor1 <- numero
+            SINO SI numero < menor2 Y numero != menor1 ENTONCES:
+                menor2 <- numero
+            FIN SI
+
+        FIN PARA
+
+        IMPRIMIR "El segundo número mayor es: ", mayor2
+        IMPRIMIR "El segundo número menor es: ", menor2
+    FIN
+
+
+## Explicación del funcionamiento
+
+El algoritmo utiliza una estrategia voraz (greedy) de recorrido único.
+Se mantienen cuatro variables que funcionan como un "podio" dinámico:
+
+-   1º y 2º lugar para los valores máximos.
+-   1º y 2º lugar para los valores mínimos.
+
+Cada número leído puede desplazar al líder actual o al segundo lugar
+según corresponda.\
+De esta forma, al finalizar el recorrido, se identifican los valores
+extremos sin ordenar el arreglo original.
+
+
+## Análisis de Complejidad
+
+### Complejidad de Tiempo: O(N)
+
+N representa la cantidad de elementos del arreglo.\
+El algoritmo realiza una única pasada y cada operación interna es
+constante O(1).\
+Por lo tanto, el tiempo crece linealmente con el tamaño de la entrada.
+
+### Complejidad de Espacio: O(1)
+
+El algoritmo utiliza únicamente cuatro variables auxiliares.\
+Independientemente del tamaño del arreglo, el uso de memoria es
+constante.

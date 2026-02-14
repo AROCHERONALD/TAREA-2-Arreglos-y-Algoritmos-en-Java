@@ -93,8 +93,4 @@ for(int var9 = 0; var9 < var8; ++var9) {
     n = var7[var9];
     System.out.print(n + " ");
 }
-```
-
-## Organización de la evidencia (/docs)
-Las capturas de pantalla del proceso de decompilación se almacenan en la carpeta `/docs`.
 
